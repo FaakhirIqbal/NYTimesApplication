@@ -1,7 +1,13 @@
 # NYTimesApplication
 NYTimes Assignment Application
-api-Key: sybDZly7rUqL8GuOtTFGBKNmcihhCQEX
-http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api- key=sybDZly7rUqL8GuOtTFGBKNmcihhCQEX
+
+###Network Api for News Article Data
+
+* api-Key: sybDZly7rUqL8GuOtTFGBKNmcihhCQEX
+
+* getNYTimesDataSet() [http://api.nytimes.com/] defined in app gradle
+* retofit2.http.Get Service [svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=sybDZly7rUqL8GuOtTFGBKNmcihhCQEX]
+
 -- To run Project Unzip the github project to a folder. Open Android Studio. Go to File -> New -> Import Project.
    Then choose the project import and then click Next -> Finish.
    Or If you have git integrated with android studio you need to Import the Git(https://github.com/FaakhirIqbal/NYTimesApplication) project to Android Studio.
