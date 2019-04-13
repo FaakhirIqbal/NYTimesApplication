@@ -27,7 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetWorkModule {
 
     /**
-     *  Provides function in NetWorkModule, allowing Dagger to know this is the instance I want inject.
+     *  NetWorkModule, allowing Dagger to know this is the instance dagger wanted to inject.
+     *  This Module will provide HttpCache, Gson, okHttpClient & other Network Services Types
      * */
 
     @Provides
@@ -84,9 +85,11 @@ public class NetWorkModule {
                     .client(okHttpClient)
                     .build();
 
-
-
     }
+
+    /**
+     * NetworkService Interface will provide the getNYTimesDataSet
+     * */
 
     @Provides
     @SuppressWarnings("unused")

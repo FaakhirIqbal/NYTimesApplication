@@ -32,7 +32,7 @@ public class Media implements Serializable {
     @SerializedName("media-metadata")
     private List<MediaMetaData> mediaMetaData = null;
 
-
+//setters and getters
     public String getType() {
         return type;
     }

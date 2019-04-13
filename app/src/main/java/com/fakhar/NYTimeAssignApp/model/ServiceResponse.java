@@ -25,7 +25,7 @@ public class ServiceResponse implements Serializable {
     private String numResults;
     @SerializedName("results")
     private List<Result> newsArticleResults = null;
-
+//setters and getters
     public String getStatus() {
         return status;
     }

@@ -10,6 +10,10 @@ import retrofit2.adapter.rxjava.HttpException;
 
 import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
+/**
+ * This Class will handle NetworkError
+ * */
+
 public class NetworkError extends Throwable {
     public static final String DEFAULT_ERROR_MESSAGE = "Something went wrong! Please try again.";
     public static final String NETWORK_ERROR_MESSAGE = "Unable to connect to the remote server!"+"\n"+"Please try again.";

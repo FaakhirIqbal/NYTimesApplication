@@ -60,7 +60,7 @@ public class Result implements Serializable {
     //as per design we need to expose keys "des_facet": "org_facet": "geo_facet":
     @SerializedName("media")
     private List<Media> media = null;
-
+//setters and getters
     public String getUrl() {
         return url;
     }

@@ -20,8 +20,13 @@ import com.fakhar.NYTimeAssignApp.customView.NYTimesDialog;
 import com.fakhar.NYTimeAssignApp.model.ServiceResponse;
 import javax.inject.Inject;
 
-public class NewsArticleFragment extends Fragment {
 
+/**
+ * First Screen Fragment that show the NewsArticle Listing
+ * NewsArticleFragment is being injecting from ApplicationComponent.java class
+ * */
+
+public class NewsArticleFragment extends Fragment {
 
     @Inject
     Service service;

@@ -8,6 +8,9 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+/**
+ * Service call
+ * */
 public class Service {
     private final NetworkService networkService;
     public Service(NetworkService networkService) {
@@ -37,14 +40,8 @@ public class Service {
                 });
     }
 
-
-    //<editor-fold desc="GENERIC CALLBACK">
-    public abstract interface ResponseCallback<T> {
+    public interface ResponseCallback<T> {
         void onSuccess(T response);
-
         void onError(NetworkError networkError);
     }
-    //</editor-fold>
-
-
 }

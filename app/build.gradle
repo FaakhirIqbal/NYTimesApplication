@@ -52,6 +52,14 @@ dependencies {
     compileOnly 'javax.annotation:jsr250-api:1.0'
 /** An image loading and caching library for Android */
     implementation 'com.github.bumptech.glide:glide:3.8.0'
+/** */
+    testImplementation 'org.powermock:powermock-module-junit4:1.6.4'
+/**Most popular Mocking framework for unit tests written in Java*/
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.27.0'
+    testCompile 'org.powermock:powermock-core:1.6.4'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.4'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.4'
+    androidTestCompile 'junit:junit:4.12'
 
 
 

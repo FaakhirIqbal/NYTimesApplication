@@ -24,7 +24,7 @@ public class MediaMetaData implements Serializable {
     @SerializedName("width")
     private Integer width;
 
-
+//setters and getters
     public String getUrl() {
         return url;
     }

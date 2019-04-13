@@ -19,6 +19,14 @@ import com.fakhar.NYTimeAssignApp.model.ServiceResponse;
 import com.fakhar.NYTimeAssignApp.utility.Constant;
 import com.fakhar.NYTimeAssignApp.utility.FragmentHelper;
 
+
+/**
+ NewsAdapter adapter class to render the data in RecyclerView list
+ The RecyclerView (NewsArticleFragment.java) adapter
+ overrides methods like onCreateViewHolder() method which inflates news_article_row.xml
+ & onBindViewHolder() method the appropriate ServiceResponse data (newsTitle, byLine, newsSource, newsPublishDate & newsImageIcon)
+ set to each row.
+ * */
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     private ServiceResponse response;
     private FragmentManager fragmentManager;
@@ -39,22 +47,25 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                 parent.getContext());
         View view =
                 inflater.inflate(R.layout.news_article_row, parent, false);
-        ViewHolder mViewHolder = new ViewHolder(view);
-        return mViewHolder;
-    }
+        final ViewHolder mViewHolder = new ViewHolder(view);
 
-    @Override
-    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
-        viewHolder.layout.setOnClickListener(new View.OnClickListener() {
+        mViewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NewsArticleDetailFragment newsArticleDetailFrg = new NewsArticleDetailFragment();
                 Bundle bundle = new Bundle();
+                int position = mViewHolder.getAdapterPosition();
                 bundle.putString(Constant.SERVICE_RESPONSE_URL, response.getNewsArticleResults().get(position).getUrl());
                 newsArticleDetailFrg.setArguments(bundle);
                 FragmentHelper.addAndInitFragmentWithBackStack(newsArticleDetailFrg, R.id.fragment_content_container, fragmentManager);
             }
         });
+
+        return mViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
         final String newsTitle = response.getNewsArticleResults().get(position).getTitle();
         final String byLine = response.getNewsArticleResults().get(position).getByline();
@@ -64,13 +75,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         viewHolder.newsByLine.setText(byLine);
         viewHolder.newsSource.setText(newsSource);
         viewHolder.newsPublishDate.setText(newsPublishDate);
-        //used Glide lib gradle for Image cropping round
+        //setting Image Icon in RV
+        articleImageIcon(viewHolder, position);
+    }
+
+    private void articleImageIcon(final ViewHolder viewHolder, int position) {
         Glide.with(mainActivity).load(response.getNewsArticleResults().get(position)
                 .getMedia().get(0).getMediaMetaData().get(0)
                 .getUrl()).asBitmap().centerCrop()
                 .into(new BitmapImageViewTarget(viewHolder.newsImageIcon) {
                     @Override
                     protected void setResource(Bitmap resource) {
+                        //used Glide library in gradle for Image cropping round
                         RoundedBitmapDrawable circularBitmapDrawable =
                                 RoundedBitmapDrawableFactory.create(mainActivity.getResources(), resource);
                         circularBitmapDrawable.setCircular(true);
@@ -84,24 +100,22 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return response.getNewsArticleResults().size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public AppCompatTextView newsTitle;
-        public AppCompatTextView newsPublishDate;
-        public AppCompatImageView newsImageIcon;
-        public AppCompatTextView newsSource;
-        public AppCompatTextView newsByLine;
-        public View layout;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private AppCompatTextView newsTitle;
+        private AppCompatTextView newsPublishDate;
+        private AppCompatImageView newsImageIcon;
+        private AppCompatTextView newsSource;
+        private AppCompatTextView newsByLine;
+        private View layout;
 
-        public ViewHolder(View v) {
+        private ViewHolder(View v) {
             super(v);
             layout = v;
-            newsTitle = (AppCompatTextView) v.findViewById(R.id.title);
-            newsImageIcon = (AppCompatImageView) v.findViewById(R.id.img_article_icon);
-            newsPublishDate = (AppCompatTextView) v.findViewById(R.id.date);
-            newsSource = (AppCompatTextView) v.findViewById(R.id.source);
-            newsByLine = (AppCompatTextView) v.findViewById(R.id.byLine);
-
-
+            newsTitle = v.findViewById(R.id.title);
+            newsImageIcon = v.findViewById(R.id.img_article_icon);
+            newsPublishDate = v.findViewById(R.id.date);
+            newsSource =  v.findViewById(R.id.source);
+            newsByLine =  v.findViewById(R.id.byLine);
         }
     }
 
