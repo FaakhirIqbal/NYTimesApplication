@@ -1,6 +1,5 @@
 package com.fakhar.NYTimeAssignApp.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -19,16 +18,12 @@ import java.util.List;
 public class ServiceResponse implements Serializable {
 
     @SerializedName("status")
-    @Expose
     private String status;
     @SerializedName("copyright")
-    @Expose
     private String copyright;
     @SerializedName("num_results")
-    @Expose
     private String numResults;
     @SerializedName("results")
-    @Expose
     private List<Result> newsArticleResults = null;
 
     public String getStatus() {

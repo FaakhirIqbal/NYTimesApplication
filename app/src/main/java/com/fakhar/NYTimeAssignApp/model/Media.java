@@ -1,8 +1,8 @@
 package com.fakhar.NYTimeAssignApp.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
     //region sample data set for key Media array
@@ -18,24 +18,18 @@ import java.util.List;
 //endregion
 
 
-public class Media {
+public class Media implements Serializable {
     @SerializedName("type")
-    @Expose
     private String type;
     @SerializedName("subtype")
-    @Expose
     private String subtype;
     @SerializedName("caption")
-    @Expose
     private String caption;
     @SerializedName("copyright")
-    @Expose
     private String copyright;
     @SerializedName("approved_for_syndication")
-    @Expose
     private Integer approvedSyndication;
     @SerializedName("media-metadata")
-    @Expose
     private List<MediaMetaData> mediaMetaData = null;
 
 

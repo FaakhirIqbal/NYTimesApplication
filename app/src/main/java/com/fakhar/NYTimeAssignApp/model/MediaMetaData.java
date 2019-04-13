@@ -1,6 +1,7 @@
 package com.fakhar.NYTimeAssignApp.model;
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 //region service sample data of media-metadata Array
 /*
@@ -12,19 +13,15 @@ import com.google.gson.annotations.SerializedName;
 //endregion
 
 
-public class MediaMetaData {
+public class MediaMetaData implements Serializable {
 
     @SerializedName("url")
-    @Expose
     private String url;
     @SerializedName("format")
-    @Expose
     private String format;
     @SerializedName("height")
-    @Expose
     private Integer height;
     @SerializedName("width")
-    @Expose
     private Integer width;
 
 

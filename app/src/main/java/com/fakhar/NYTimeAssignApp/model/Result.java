@@ -1,8 +1,9 @@
 package com.fakhar.NYTimeAssignApp.model;
 
-import com.google.gson.annotations.Expose;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 //region sample data Result Array
@@ -28,53 +29,36 @@ import java.util.List;
 
 */
 //endregion
-public class Result {
+public class Result implements Serializable {
 
     @SerializedName("url")
-    @Expose
     private String url;
     @SerializedName("adx_keywords")
-    @Expose
     private String adxKeywords;
     @SerializedName("column")
-    @Expose
     private Object column;
     @SerializedName("section")
-    @Expose
     private String section;
     @SerializedName("byline")
-    @Expose
     private String byline;
     @SerializedName("type")
-    @Expose
     private String type;
     @SerializedName("title")
-    @Expose
     private String title;
     @SerializedName("abstract")
-    @Expose
     private String abstractStr;
     @SerializedName("published_date")
-    @Expose
     private String published_date;
     @SerializedName("source")
-    @Expose
     private String source;
     @SerializedName("id")
-    @Expose
     private Long id;
     @SerializedName("asset_id")
-    @Expose
     private Long asset_id;
     @SerializedName("views")
-    @Expose
     private int views;
-//    @SerializedName("per_facet")
-//    @Expose
-//    private String per_facet;
     //as per design we need to expose keys "des_facet": "org_facet": "geo_facet":
     @SerializedName("media")
-    @Expose
     private List<Media> media = null;
 
     public String getUrl() {
@@ -128,10 +112,6 @@ public class Result {
     public int getViews() {
         return views;
     }
-
-    //public String getPer_facet() {
-      //  return per_facet;
-   // }
 
     public List<Media> getMedia() {
         return media;
@@ -188,10 +168,6 @@ public class Result {
     public void setViews(int views) {
         this.views = views;
     }
-
- //   public void setPer_facet(String per_facet) {
-  //      this.per_facet = per_facet;
-  //  }
 
     public void setMedia(List<Media> media) {
         this.media = media;
