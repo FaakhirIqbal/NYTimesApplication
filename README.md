@@ -78,27 +78,27 @@ testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 - If you have git integrated with android studio you need to Import the Git(https://github.com/FaakhirIqbal/NYTimesApplication) project to Android Studio.
 
 ### Application architecture and hierarchy
-- There are packages each of them showing there functionality by its name
+There are packages each of them showing there functionality by its name
 like layout folder contains all xml file views of they screen News Article listing and News Article details with the name
-* [news_article_recycle.xml] and
-* [news_article_detail_view.xml]
+ [news_article_recycle.xml] &
+ [news_article_detail_view.xml]
 
 * adapter --> [NewsAdapter.java] which is populating earch row of recycleView of News Article
 
 * communication --> Network and New York Times Api calling related work has done in that package
 
-* controllor--> Two main Fragments Screen 
+* controllor --> Two main Fragments Screen 
    - [NewsArticleFragment.java]
    - [NewsArticleDetailFragment.java] which are inflating in [MainActivity.java]
 
-* customView--> all the customization of layout and datafields(like: TextView EditText Button radioButton etc) modification package
+* customView --> all the customization of layout and datafields(like: TextView EditText Button radioButton etc) modification package
 
-* database--> Phone Local database operation for saving data from any API as needed, as per requirement I didnot added details in these classes
+* database --> Phone Local database operation for saving data from any API as needed, as per requirement I didnot added details in these classes
 
-* model--> all Beans/Objects are added in this package
+* model --> all Beans/Objects are added in this package
 
-* utility--> all utility classes can be added in this package like DateFormation, networks api and other common constants 
+* utility --> all utility classes can be added in this package like DateFormation, networks api and other common constants 
 
-* manifeast--> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
+* manifeast --> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
 
-* TestCases--> Right now I have not added testcases but I have added basic files in Package I will do once I got spare time.
+* TestCases --> Right now I have not added testcases but I have added basic files in Package I will do once I got spare time.
