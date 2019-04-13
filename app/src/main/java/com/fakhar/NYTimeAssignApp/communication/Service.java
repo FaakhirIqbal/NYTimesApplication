@@ -14,9 +14,9 @@ public class Service {
         this.networkService = networkService;
     }
 
-    public Subscription getBaseURL(final ResponseCallback<ServiceResponse> responseCallback)
+    public Subscription getNYTimesDataSet(final ResponseCallback<ServiceResponse> responseCallback)
     {
-        return networkService.getBaseURL()
+        return networkService.getNYTimesDataSet()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<ServiceResponse>() {

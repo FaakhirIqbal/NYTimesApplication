@@ -26,6 +26,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class NetWorkModule {
 
+    /**
+     *  Provides function in NetWorkModule, allowing Dagger to know this is the instance I want inject.
+     * */
+
     @Provides
     @Singleton
     Cache provideHttpCache(Application application) {
@@ -76,7 +80,7 @@ public class NetWorkModule {
             return new Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .baseUrl(BuildConfig.BASEURL)
+                    .baseUrl(BuildConfig.getNYTimesDataSet)
                     .client(okHttpClient)
                     .build();
 

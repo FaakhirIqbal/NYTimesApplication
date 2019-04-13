@@ -8,6 +8,6 @@ import rx.Observable;
 public interface NetworkService {
 
     @GET("svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=sybDZly7rUqL8GuOtTFGBKNmcihhCQEX")
-    Observable<ServiceResponse> getBaseURL();
+    Observable<ServiceResponse> getNYTimesDataSet();
 
 }

@@ -22,6 +22,7 @@ import javax.inject.Inject;
 
 public class NewsArticleFragment extends Fragment {
 
+
     @Inject
     Service service;
     private NYTimesDialog newYorkTimesProgressDialog;
@@ -53,7 +54,7 @@ public class NewsArticleFragment extends Fragment {
         newYorkTimesProgressDialog = new NYTimesDialog(getActivity());
         newYorkTimesProgressDialog.showDialog();
 
-        service.getBaseURL(new Service.ResponseCallback<ServiceResponse>() {
+        service.getNYTimesDataSet(new Service.ResponseCallback<ServiceResponse>() {
             @Override
             public void onSuccess(ServiceResponse response) {
                 layoutManager = new LinearLayoutManager(getActivity());
@@ -67,7 +68,7 @@ public class NewsArticleFragment extends Fragment {
             @Override
             public void onError(NetworkError networkError) {
                 newYorkTimesProgressDialog.dismiss();
-                Toast.makeText(getActivity(), "An Error Occurred", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Network error has occurred", Toast.LENGTH_SHORT).show();
             }
         });
     }
