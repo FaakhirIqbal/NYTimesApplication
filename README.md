@@ -9,7 +9,7 @@ NYTimes Assignment Application
 * Get Service of most popular articles [svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key=sybDZly7rUqL8GuOtTFGBKNmcihhCQEX] (Get service communication.NetworkService.class)
 
 ### Dependencies in Gradle
- >we can use many jar files so we need to implement fileThree in gradle file
+ >Can be used many jar files so we need to implement fileThree in gradle file
 ```sh
 implementation fileTree(dir: 'libs', include: ['*.jar'])
 ```
@@ -53,6 +53,23 @@ testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
  implementation 'com.squareup.okhttp3:okhttp:3.10.0'
  implementation 'com.squareup.retrofit2:converter-gson:2.0.1'
  ```
+ >RxJava Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM
+ ```sh
+ implementation 'io.reactivex:rxandroid:1.2.1'
+ implementation 'io.reactivex:rxjava:1.1.6'
+ ```
+ > Library used for common annotations For The Java Platform and for Dagger2 dependency
+ ```sh
+ compileOnly 'javax.annotation:jsr250-api:1.0'
+ ```
+ > An image loading and caching library for Android
+ ```sh
+   implementation 'com.github.bumptech.glide:glide:3.8.0'
+ ```
+ 
+ 
+
+ 
  
 ### How to run project 
 - To run Project Unzip the github project to a folder. Open Android Studio. Go to File -> New -> Import Project.
@@ -60,16 +77,28 @@ testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
    Or
 - If you have git integrated with android studio you need to Import the Git(https://github.com/FaakhirIqbal/NYTimesApplication) project to Android Studio.
 
+### Application architecture and hierarchy
+- There are packages each of them showing there functionality by its name
+like layout folder contains all xml file views of they screen News Article listing and News Article details with the name
+* [news_article_recycle.xml] and
+* [news_article_detail_view.xml]
 
---there are packages each of them showing there functionality by its name
-like layout folder contains all xml file views of they screen News Article listing and News Article details with the name news_article_recycle.xml and
-news_article_detail_view.xml
-adapter-->NewsAdapter.java which is populating earch row of recycleView of News Article 
-communication--> Network and New York Times Api calling related work has done in that package
-controllor--> Two main Fragments Screen i) NewsArticleFragment ii) NewsArticleDetailFragment which are inflating in MainActivity
-customView--> all the customization of layout and datafields(like: TextView EditText Button radioButton etc) modification package
-database--> Phone Local database operation for saving data from any API as needed, as per requirement I didnot added details in these classes
-model--> all Beans/Objects are added in this package
-utility--> all utility classes can be added in this package like DateFormation, networks api and other common constants 
-manifeast--> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
-TestCases--> Right now I have not added testcases but I have added basic files in Package I will do once I got spare time.
+* adapter --> [NewsAdapter.java] which is populating earch row of recycleView of News Article
+
+* communication --> Network and New York Times Api calling related work has done in that package
+
+* controllor--> Two main Fragments Screen 
+   - [NewsArticleFragment.java]
+   - [NewsArticleDetailFragment.java] which are inflating in [MainActivity.java]
+
+* customView--> all the customization of layout and datafields(like: TextView EditText Button radioButton etc) modification package
+
+* database--> Phone Local database operation for saving data from any API as needed, as per requirement I didnot added details in these classes
+
+* model--> all Beans/Objects are added in this package
+
+* utility--> all utility classes can be added in this package like DateFormation, networks api and other common constants 
+
+* manifeast--> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
+
+* TestCases--> Right now I have not added testcases but I have added basic files in Package I will do once I got spare time.
