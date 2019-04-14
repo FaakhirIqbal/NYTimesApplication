@@ -1,15 +1,8 @@
 package com.fakhar.NYTimeAssignApp;
-//TODO need to add test cases using powermock or Espresso test recorder
 
-
-import android.net.Uri;
-import android.test.mock.MockContext;
-import android.util.Log;
 import android.webkit.WebView;
-
 import com.fakhar.NYTimeAssignApp.communication.NetworkService;
 import com.fakhar.NYTimeAssignApp.controller.NewsArticleDetailFragment;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,17 +10,8 @@ import org.mockito.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import java.io.IOException;
-import java.util.Collections;
-
-import okhttp3.Request;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-
-import static junit.framework.TestCase.assertTrue;
-
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({BaseApplication.class, NewsArticleDetailFragment.class, NetworkService.class})
+@PrepareForTest({BaseApplication.class, NewsArticleDetailFragment.class})
 public class NewsArticleDetailsWebViewTest {
 
     
