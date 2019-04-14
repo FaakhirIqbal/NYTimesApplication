@@ -10,7 +10,12 @@ import org.mockito.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-@RunWith(PowerMockRunner.class)
+/**
+ * Test case to verify webView
+ */
+
+
+ @RunWith(PowerMockRunner.class)
 @PrepareForTest({BaseApplication.class, NewsArticleDetailFragment.class})
 public class NewsArticleDetailsWebViewTest {
 

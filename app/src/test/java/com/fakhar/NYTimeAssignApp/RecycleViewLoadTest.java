@@ -16,35 +16,28 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.fakhar.NYTimeAssignApp.adapter.NewsAdapter;
-import com.fakhar.NYTimeAssignApp.controller.NewsArticleFragment;
 import com.fakhar.NYTimeAssignApp.model.ServiceResponse;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-
-import java.util.Arrays;
-
 import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertEquals;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 
-
+/**
+ * Test
+ * readFromNewsAdapter()
+ * Test
+ * onCreateViewHolderReturnValidViewHolder()
+ */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({LayoutInflater.class, NewsAdapter.class})
 public class RecycleViewLoadTest {
@@ -70,8 +63,6 @@ public class RecycleViewLoadTest {
     private FragmentManager mockFragmentManager;
     @Mock
     private MainActivity mockMainActivity;
-
-
 
     @Before
     public void setUp() throws Exception {

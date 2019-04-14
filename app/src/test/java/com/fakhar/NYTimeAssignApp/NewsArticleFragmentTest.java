@@ -32,6 +32,15 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+/**
+ * Test cases for listing articles
+ * Test
+ * testOnCreateView()
+ * Test
+ * testOnCreate()
+ *
+ */
+
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({BaseApplication.class, NewsArticleFragment.class, MainActivity.class,
         Service.class, NetworkService.class})
