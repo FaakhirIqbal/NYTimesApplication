@@ -67,7 +67,18 @@ testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
    implementation 'com.github.bumptech.glide:glide:3.8.0'
  ```
  
- 
+> Most popular Mocking framework for unit tests written in Java
+```sh
+    testImplementation 'org.mockito:mockito-core:2.8.0'
+```
+
+> PowerMock is for Unit Testing
+```sh    
+    testImplementation 'org.powermock:powermock-api-mockito2:1.7.0RC2'
+    testImplementation 'org.powermock:powermock-module-junit4:1.7.0'
+    testImplementation 'org.powermock:powermock-core:1.7.0'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.0'
+ ```
 
  
  
@@ -101,10 +112,24 @@ like layout folder contains all xml file views of they screen News Article listi
 
 * manifeast --> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
 
-* TestCases --> [NewsArticleFragmentTest.java] added Test cases for listing articles in BaseApplication.
+* TestCases ```sh - app -src -test -java -com.fakhar.NYTimeAssignApp```
+[NewsArticleFragmentTest.java] added Test cases for listing articles in BaseApplication.
 ```sh
 @Test
 testOnCreateView
 @Test
 testOnCreate
 ```
+[RecycleViewLoadTest.java] added Test cases to verify NewsAdapter 
+```sh
+@Test
+readFromNewsAdapter()
+@Test
+onCreateViewHolderReturnValidViewHolder()
+```
+[NewsArticleDetailsWebViewTest.java] in this class Test case to verify webview
+```sh
+@Test
+loadedUrlTest()
+```
+
