@@ -112,13 +112,14 @@ like layout folder contains all xml file views of they screen News Article listi
 
 * manifeast --> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
 
-* TestCases ```sh - app -src -test -java -com.fakhar.NYTimeAssignApp```
+* TestCases ```sh -app -src -test -java -com.fakhar.NYTimeAssignApp```
+
 [NewsArticleFragmentTest.java] added Test cases for listing articles in BaseApplication.
 ```sh
 @Test
-testOnCreateView
+testOnCreateView()
 @Test
-testOnCreate
+testOnCreate()
 ```
 [RecycleViewLoadTest.java] added Test cases to verify NewsAdapter 
 ```sh
