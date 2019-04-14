@@ -76,10 +76,10 @@ public class FragmentHelper {
      * @param fm
      */
     @SuppressWarnings({"JavaDoc", "unused"})
-    public static void addAndInitFragmentWithBackStack(android.support.v4.app.Fragment fragment, int container, android.support.v4.app.FragmentManager fm) {
+    public static void addAndInitFragmentWithBackStack(android.app.Fragment fragment, int container, android.app.FragmentManager fm) {
 
         if(fm.findFragmentByTag(fragment.getClass().getSimpleName())==null) {
-            android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
+            android.app.FragmentTransaction ft = fm.beginTransaction();
 //            ft.setCustomAnimations(R.animator.fragment_animation_left_enter,R.animator.fragment_animation_left_out, R.animator.fragment_animation_right_enter,R.animator.fragment_animation_right_out);
             ft.add(container, fragment, fragment.getClass().getSimpleName());
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

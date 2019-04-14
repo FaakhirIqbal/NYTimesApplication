@@ -11,6 +11,11 @@ android {
         buildConfigField "String", "getNYTimesDataSet", "\"http://api.nytimes.com/\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    //it should be true other Fragment would not be mocked and test case wouldn't run
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -30,9 +35,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:26.1.0"
 /**Time & Date Formatting library */
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
-/**Library used for automated Unit Testing*/
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 /**OkHttp that logs HTTP request and response data*/
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
 /**compile time dependency injection framework added for simplifies the DI into Android components*/
@@ -52,13 +55,18 @@ dependencies {
     compileOnly 'javax.annotation:jsr250-api:1.0'
 /** An image loading and caching library for Android */
     implementation 'com.github.bumptech.glide:glide:3.8.0'
-/**PowerMock is for UnitTest  */
-    testImplementation 'org.powermock:powermock-module-junit4:1.6.4'
+
+/**Libraries used for automated Unit Testing*/
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 /**Most popular Mocking framework for unit tests written in Java*/
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.27.0'
-    testImplementation 'org.powermock:powermock-core:1.6.4'
-    testImplementation 'org.powermock:powermock-api-mockito:1.6.4'
-    testImplementation 'org.powermock:powermock-module-junit4:1.6.4'
+    testImplementation 'org.mockito:mockito-core:2.8.0'
+/**PowerMock is for UnitTest  */
+    testImplementation 'org.powermock:powermock-api-mockito2:1.7.0RC2'
+    testImplementation 'org.powermock:powermock-module-junit4:1.7.0'
+    testImplementation 'org.powermock:powermock-core:1.7.0'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.0'
     androidTestImplementation 'junit:junit:4.12'
 
 
