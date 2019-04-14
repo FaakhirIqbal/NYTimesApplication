@@ -101,4 +101,4 @@ like layout folder contains all xml file views of they screen News Article listi
 
 * manifeast --> MainActivity Launcher class and BaseApplication and it contains all the details needed by the android system about the application.
 
-* TestCases --> Right now I have not added testcases but I have added basic files in Package I will do once I got spare time.
+* TestCases --> I have added testcases.
