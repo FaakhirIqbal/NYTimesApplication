@@ -38,7 +38,6 @@ import static org.mockito.Mockito.verify;
 
 public class NewsArticleFragmentTest {
 
-
     @Mock
     private LayoutInflater mockLayoutInflater;
 
@@ -90,15 +89,16 @@ public class NewsArticleFragmentTest {
     @Before
     public void setUp() throws Exception{
 
+/*spy method is used to wrap the real object*/
+
         MockitoAnnotations.initMocks(this);
         spyMainActivity = spy(new MainActivity());
         spyNewsArticleFragment = spy(new NewsArticleFragment());
         spyService = new Service(networkService);
-
+/* You have to use doReturn() for stubbing */
         Mockito.doReturn(spyMainActivity).when(spyNewsArticleFragment).getActivity();
         Mockito.doReturn(mockBaseApplication).when(spyMainActivity).getApplication();
         Mockito.doReturn(applicationComponent).when(mockBaseApplication).getAppComponent();
-
         Mockito.doReturn(mockLayoutInflaterProdRate).when(spyMainActivity).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Mockito.doReturn(mockInflatedView).when(mockLayoutInflater).inflate(anyInt(), any(ViewGroup.class), anyBoolean());
         Mockito.doReturn(mockInflatedViewProdRate).when(mockLayoutInflaterProdRate).inflate(anyInt(), any(ViewGroup.class));

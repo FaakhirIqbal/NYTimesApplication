@@ -1,0 +1,55 @@
+package com.fakhar.NYTimeAssignApp;
+//TODO need to add test cases using powermock or Espresso test recorder
+
+
+import android.net.Uri;
+import android.test.mock.MockContext;
+import android.util.Log;
+import android.webkit.WebView;
+
+import com.fakhar.NYTimeAssignApp.communication.NetworkService;
+import com.fakhar.NYTimeAssignApp.controller.NewsArticleDetailFragment;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.io.IOException;
+import java.util.Collections;
+
+import okhttp3.Request;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+import static junit.framework.TestCase.assertTrue;
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({BaseApplication.class, NewsArticleDetailFragment.class, NetworkService.class})
+public class NewsArticleDetailsWebViewTest {
+
+    
+    @Mock
+    private WebView mockWebView;
+    @Mock
+    private BaseApplication mockBaseApplication;
+    @Mock
+    private NetworkService mockNetworkService;
+
+    @Before
+    public void setUp() throws Exception {
+        mockWebView = new WebView(mockBaseApplication.getApplicationContext());
+    }
+
+
+    @Test
+    public void loadedUrlTest() {
+        mockWebView.loadUrl("https://www.nytimes.com/2019/04/06/health/drug-resistant-candida-auris.html");
+    }
+    
+    
+}
+
+

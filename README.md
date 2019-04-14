@@ -104,7 +104,7 @@ like layout folder contains all xml file views of they screen News Article listi
 * TestCases --> [NewsArticleFragmentTest.java] added Test cases for listing articles in BaseApplication.
 ```sh
 @Test
-OnCreate
+testOnCreateView
 @Test
-OnCreateView
+testOnCreate
 ```

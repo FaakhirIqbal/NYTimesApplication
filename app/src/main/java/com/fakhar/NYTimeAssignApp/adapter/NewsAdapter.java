@@ -1,5 +1,6 @@
 package com.fakhar.NYTimeAssignApp.adapter;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.fakhar.NYTimeAssignApp.MainActivity;
@@ -31,7 +32,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     private ServiceResponse response;
     private FragmentManager fragmentManager;
     private MainActivity mainActivity;
-
+    private Context mContext;
     public NewsAdapter(ServiceResponse response,
                        MainActivity mainActivity,
                        FragmentManager fragmentManager) {
@@ -39,6 +40,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         this.fragmentManager = fragmentManager;
         this.mainActivity = mainActivity;
     }
+
+
+    public NewsAdapter(Context mContext){
+        this.mContext = mContext;
+    }
+    public String getNewsArticleTitle() {
+        return mContext.getString(R.string.rv_test_text);
+    }
+
 
     @Override
     public NewsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
