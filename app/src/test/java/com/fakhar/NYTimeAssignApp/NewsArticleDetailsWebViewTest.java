@@ -30,6 +30,7 @@ public class NewsArticleDetailsWebViewTest {
 
     @Test
     public void loadedUrlTest() {
+        //testing url
         mockWebView.loadUrl("https://www.nytimes.com/2019/04/06/health/drug-resistant-candida-auris.html");
     }
     
