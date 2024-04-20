@@ -6,6 +6,8 @@ import com.fakhar.NYTimeAssignApp.controller.NewsArticleFragment;
 import javax.inject.Singleton;
 import dagger.Component;
 
+
+
 /**
  * Using dagger2 in project as design pattern
  * ApplicationComponent is most important piece of dagger
